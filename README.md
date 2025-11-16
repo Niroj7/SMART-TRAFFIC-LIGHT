@@ -1,4 +1,7 @@
                             Smart Traffic Light Control System (IoT + Arduino)
+                            ## IEEE Research Poster
+<img src="poster.jpg" width="800">
+
 
 This project is an Arduino-based Smart Traffic Light System designed to reduce traffic congestion, improve emergency response time, and enhance intersection safety.
 It uses real-time sensors, dynamic signal timing, and boom barriers to adapt traffic flow based on actual vehicle density.
