@@ -36,4 +36,5 @@ This project demonstrates how simple IoT hardware and sensor-driven logic can so
 <img src="poster.JPG" width="800">
 
 Read the full IEEE Paper:
-Smart Traffic Light Control System — IEEE Publication
+  :** https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11025771&isnumber=11025534
+
