@@ -9,40 +9,80 @@
 </p>
 
 ---
-# 📌 **OVERVIEW**
-This project is an **Arduino-based Smart Traffic Light Control System** designed to improve traffic efficiency and road safety using **real-time sensors, adaptive signal timing, and automated boom barriers**.
-    The system dynamically adjusts traffic signals based on **actual vehicle density** and provides **priority access for emergency vehicles** using siren detection.  
-The solution was **fully designed, coded, tested, and documented**, and was **published at IEEE SusTech**, where it received **award recognition** as a high-impact smart city prototype.
-    Experimental results indicate the system’s potential to **reduce intersection accidents and improve emergency vehicle clearance times** through adaptive signal control and enforcement.
 
-----
+# 📌 **OVERVIEW**
+<p align="right">
+  <i>
+    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11025771&isnumber=11025534" target="_blank">
+      View Published IEEE Paper
+    </a>
+  </i>
+</p>
+
+This project is an **Arduino-based Smart Traffic Light Control System** designed to improve traffic efficiency and road safety using **real-time sensors, adaptive signal timing, and automated boom barriers**.
+
+The system dynamically adjusts traffic signals based on **actual vehicle density** and provides **priority access for emergency vehicles** using siren detection.  
+The solution was **fully designed, coded, tested, and documented**, and was **published at IEEE SusTech** as an **award-winning system prototype**, with the author serving as **Lead Author**.
+
+---
 
 # ⚙️ **HOW IT WORKS**
 
 1. **Default Traffic Operation**  
-   The system initially runs like a standard traffic light:
+   The system initially operates like a conventional traffic light:
    - Red & Green: 6 seconds  
    - Yellow: 3 seconds  
 
 2. **Traffic Density Monitoring**  
-   IR and Ultrasonic sensors continuously detect vehicle presence and lane congestion.
+   **IR and Ultrasonic sensors** continuously detect vehicle presence and lane congestion.
 
 3. **Adaptive Signal Control**  
-   Signal timings dynamically adjust based on real-time traffic density.
+   Signal timings dynamically adjust in real time based on traffic density.
 
 4. **Emergency Vehicle Detection**  
-   Sound sensors detect sirens and immediately trigger **signal preemption**.
+   **Sound sensors** detect emergency sirens and immediately trigger **signal preemption**.
 
 5. **Wireless Controller Synchronization**  
-   Dual Arduino microcontrollers communicate via the **XBee wireless protocol** for coordinated control.
+   **Dual Arduino microcontrollers** communicate via the **XBee wireless protocol**.
 
 6. **Boom Barrier Enforcement**  
-   Servo-controlled boom barriers lower during red lights and raise during green.
+   **Servo-controlled boom barriers** lower during red lights and raise during green.
 
 7. **Manual Override (Optional)**  
-   Authorized smartphone control enables manual intervention when required.
+   **Bluetooth-based smartphone control** enables manual override during emergencies or maintenance.
 
 ---
+# 🧱 **PROTOTYPE IMPLEMENTATION & SYSTEM FLOW**
+
+<div align="center">
+<table width="100%">
+<tr>
+
+<td align="center" width="33%">
+<img src="PROTOTYPE.jpeg" width="380" height="260"><br>
+<b>Adaptive Signal & Boom Barrier Operation</b>
+</td>
+
+<td align="center" width="33%">
+<img src="PROTO2.jpeg" width="380" height="260"><br>
+<b>Emergency & Density-Based Traffic Control</b>
+</td>
+
+<td align="center" width="33%">
+<img src="FLOWCHART.png" width="380" height="260"><br>
+<b>System Decision Flowchart</b>
+</td>
+
+</tr>
+</table>
+</div>
+
+
+
+
+
+---
+
 # 🔌 **HARDWARE & SOFTWARE COMPONENTS**
 
 <div align="center">
@@ -50,31 +90,34 @@ The solution was **fully designed, coded, tested, and documented**, and was **pu
 <tr>
 <td width="50%" valign="top">
 
-  ### 🧱 **HARDWARE COMPONENTS**
-- **Dual Arduino Microcontrollers** – Distributed control architecture  
-- **IR / Ultrasonic Sensors** – Vehicle detection and density measurement  
-- **Sound Sensor Module** – Emergency vehicle siren detection  
-- **XBee Wireless Modules** – Inter-controller communication  
-- **Servo Motors** – Automated boom barrier actuation  
-- **Traffic Light LEDs** – Signal indicators  
-- **Power Supply Module** – Stable and reliable power delivery  
+### 🧱 **HARDWARE COMPONENTS**
+- **Dual Arduino Microcontrollers**  
+- **IR Sensors**  
+- **Ultrasonic Sensors**  
+- **Sound Sensor Module**  
+- **XBee Wireless Modules**  
+- **Servo Motors (Boom Barriers)**  
+- **Traffic Light LEDs**  
+- **Power Supply Module**
 
 </td>
 <td width="50%" valign="top">
 
-  ### 💻 **SOFTWARE COMPONENTS**
-- **Arduino IDE** – Development, testing, and deployment  
-- **C++ (Arduino)** – Embedded control logic  
-- **Adaptive Timing Algorithms** – Real-time signal optimization  
-- **Interrupt-Based Handling** – Emergency signal preemption  
-- **Wireless Sync Logic** – XBee-based coordination  
-- **Sensor Calibration Code** – Noise filtering and accuracy improvement  
+### 💻 **SOFTWARE COMPONENTS**
+- **Arduino IDE**  
+- **C++ (Embedded Arduino Programming)**  
+- **Adaptive Timing Algorithms**  
+- **Interrupt-Based Emergency Handling**  
+- **XBee Wireless Synchronization Logic**  
+- **Bluetooth Manual Override Logic**
+
 </td>
 </tr>
 </table>
 </div>
 
 ---
+
 # 🧠 **TECHNOLOGIES USED**
 
 <div align="center">
@@ -82,23 +125,23 @@ The solution was **fully designed, coded, tested, and documented**, and was **pu
 <tr>
 <td width="33%" valign="top">
 
-- Arduino (Dual Controller Setup)  
-- C++ / Embedded Systems  
-- IoT Control Logic  
+- **Arduino (Dual Microcontroller Architecture)**  
+- **C++ / Embedded Systems Programming**  
+- **IoT Control Logic**
 
 </td>
 <td width="33%" valign="top">
 
-- IR Sensors  
-- Ultrasonic Sensors  
-- Sound Sensors  
+- **IR Sensors**  
+- **Ultrasonic Sensors**  
+- **Sound Sensors**
 
 </td>
 <td width="33%" valign="top">
 
-- XBee Wireless Protocol  
-- Servo Motors  
-- Real-Time Interrupts  
+- **XBee Wireless Communication Protocol**  
+- **Servo Motors**  
+- **Real-Time Interrupt Handling**
 
 </td>
 </tr>
@@ -106,41 +149,49 @@ The solution was **fully designed, coded, tested, and documented**, and was **pu
 </div>
 
 ---
+
 # 🧪 **TEST SCENARIOS**
-- **Normal Traffic Flow** – Stable 6s red/green, 3s yellow  
-- **Emergency Vehicle Mode** – Priority green signal for emergency lanes  
-- **Density-Based Control** – Extended green time for congested lanes  
-- **Boom Barrier Control** – Barriers lower during red and raise during green  
-- **Manual Override** – Barriers open within **1–2 seconds**
+
+- **Normal Traffic Flow (Baseline Mode)**  
+  Fixed-time cycle (6s red/green, 3s yellow)
+
+- **Low Traffic Density Scenario**  
+  Reduced green time to minimize idle waiting
+
+- **High Traffic Density Scenario**  
+  Extended green signal for congested lanes
+
+- **Emergency Vehicle Detection Scenario**  
+  Siren detection triggers instant signal preemption
+
+- **Multi-Lane Synchronization Scenario**  
+  Dual Arduino coordination using XBee protocol
+
+- **Boom Barrier Enforcement Scenario**  
+  Physical barriers prevent red-light violations
+
+- **Manual Override Scenario**  
+  Bluetooth-based smartphone intervention
+
+- **Fail-Safe Scenario**  
+  System reverts to default timing on sensor failure
+
 ---
-# 🎯 **KEY FEATURES**
-- Real-time adaptive traffic signal control  
-- Emergency vehicle detection and signal preemption  
-- Dual microcontroller architecture with wireless synchronization  
-- Automated boom barrier enforcement  
-- Smartphone-based manual override  
-- Low-cost and scalable smart city solution  
----
+
 # 📊 **RESULTS & IMPACT**
-- **Published as Lead Author** at the **IEEE SusTech Conference**, highlighting the system’s real-world applicability in smart city infrastructure  
-- **Award-winning prototype**, recognized for innovation in intelligent traffic management and emergency response systems  
-- **Presented across multiple colleges and academic institutions**, demonstrating practical IoT and embedded systems engineering  
-- Experimental testing and simulations **projected a reduction in intersection accidents** by enforcing signal compliance through boom barriers  
-- **Significantly reduced emergency vehicle response time** through real-time siren detection and signal preemption  
-- Improved traffic flow efficiency by dynamically adapting signal timing based on real-time vehicle density  
-- Validated as a **scalable, low-cost smart traffic solution** suitable for urban intersections
+- **Published as Lead Author** at the **IEEE SusTech Conference**  
+- **Award-winning prototype**, recognized for smart city innovation  
+- **Presented across multiple colleges and academic institutions**  
+- Experimental evaluation **projected a reduction in intersection accidents** through adaptive signals and physical enforcement  
+- **Reduced emergency vehicle response time** via real-time detection and signal preemption  
+- Validated as a **scalable, low-cost IoT traffic management system**
+
+---
 
 # 📌 **ACADEMIC PUBLICATION & POSTER**
 
 ### 📄 IEEE Research Paper (Lead Author)
 **Smart Traffic Light Control with Emergency Vehicle Detection and Boom Barriers Using Arduino**  
-**Role:** Lead Author  
-**Conference:** IEEE SusTech  
-
-This research presents a fully implemented IoT-based traffic control system that demonstrates
-measurable improvements in traffic efficiency, emergency response prioritization,
-and intersection safety through adaptive signal control and automated enforcement mechanisms.
-
 🔗 https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11025771&isnumber=11025534
 
 ### 🖼️ Research Poster
@@ -148,7 +199,14 @@ and intersection safety through adaptive signal control and automated enforcemen
 
 ---
 
+# 📌 **SUMMARY**
+This project demonstrates how **tight hardware–software integration**, **wireless controller coordination**, and **sensor-driven adaptive logic** can effectively improve **traffic efficiency, intersection safety, and emergency response times**.
+
+The system was **designed, implemented, tested, published, and recognized**, showcasing applied expertise in **IoT, embedded systems, and smart city engineering**.
+
+---
+
 <p align="center">
   <b>Happy Learning! 🚀</b><br>
-  Thanks for visiting this project and taking the time to explore my work.
+  Thanks for visiting and exploring this project.
 </p>
